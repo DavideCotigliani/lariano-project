@@ -10,13 +10,12 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('attrazioni', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->text('descrizione');
-            $table->string('categoria');
-            $table->decimal('latitudine', 10, 7)->nullable(); // per la posizione
-            $table->decimal('longitudine', 10, 7)->nullable(); // per la posizione
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->dateTime('start_date');
+            $table->dateTime('end_date')->nullable();
 
             $table->json('immagini')->nullable();
 
@@ -29,6 +28,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('attrazioni');
+        Schema::dropIfExists('events');
     }
 };
