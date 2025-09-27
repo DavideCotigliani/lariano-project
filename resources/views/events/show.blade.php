@@ -1,5 +1,5 @@
 @extends('layouts.lariano') 
-@section('title', 'Singola attrazione')
+@section('title', 'Singolo evento')
 
 @section('content')
 
@@ -11,11 +11,11 @@
 @endif --}}
 
   <div class="card-body">
-    <h4 class="card-title">{{$attrazione->nome}}</h4>
-    <h5 class="card-title">{{$attrazione->descrizione}}</h5>
-    <p class="card-text">{{$attrazione->categoria}}</p>
-     <p class="card-text">{{$attrazione->latitudine}}</p>
-      <p class="card-text">{{$attrazione->longitudine}}</p>
+    <h4 class="card-title">{{$event->title}}</h4>
+    <h5 class="card-title">{{$event->description}}</h5>
+    <p class="card-text">{{$event->start_date}}</p>
+     <p class="card-text">{{$event->end_date}}</p>
+      <p class="card-text">{{$event->immagini}}</p>
   </div>
 </div>
 <div class="d-flex gap-1" >

@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AttrazioneController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RestaurantController;
+use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,5 +26,8 @@ Route::resource('attrazioni', AttrazioneController::class)->parameters([
     'attrazioni' => 'attrazione'
 ]);
 
+Route::resource('events', EventController::class);
+
+Route::resource('restaurants', RestaurantController::class);
 
 require __DIR__.'/auth.php';

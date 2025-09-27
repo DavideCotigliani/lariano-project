@@ -1,5 +1,5 @@
 @extends('layouts.lariano')
-@section('title', 'Tutte le attrazioni')
+@section('title', 'Tutti gli eventi')
 @section('content')
    <table class="table table-bordered">
   <thead>

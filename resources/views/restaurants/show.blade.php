@@ -1,5 +1,5 @@
 @extends('layouts.lariano') 
-@section('title', 'Singola attrazione')
+@section('title', 'Ristorante')
 
 @section('content')
 
@@ -11,11 +11,12 @@
 @endif --}}
 
   <div class="card-body">
-    <h4 class="card-title">{{$attrazione->nome}}</h4>
-    <h5 class="card-title">{{$attrazione->descrizione}}</h5>
-    <p class="card-text">{{$attrazione->categoria}}</p>
-     <p class="card-text">{{$attrazione->latitudine}}</p>
-      <p class="card-text">{{$attrazione->longitudine}}</p>
+    <h4 class="card-title">{{$restaurant->name}}</h4>
+    <h5 class="card-title">{{$restaurant->address}}</h5>
+    <p class="card-text">{{$restaurant->phone}}</p>
+     <p class="card-text">{{$restaurant->latitude}}</p>
+     <p class="card-text">{{$restaurant->longitude}}</p>
+      <p class="card-text">{{$restaurant->image}}</p>
   </div>
 </div>
 <div class="d-flex gap-1" >
@@ -23,7 +24,7 @@
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Elimina
 </button>
-    <a class="btn btn-primary" href="{{route ("events.index")}}">Torna alla lista</a>
+    <a class="btn btn-primary" href="{{route ("restaurants.index")}}">Torna alla lista</a>
 </div>
 {{-- Per eliminare il videogioco --}}
 {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
