@@ -20,7 +20,9 @@
             <td>{{$restaurant->phone}}</td>
              <td>{{$restaurant->latitude}}</td>
              <td>{{$restaurant->longitude}}</td>
-              <td>{{$restaurant->image}}</td>
+              <td> @if ($restaurant->image)
+  <img class="card-img-top" src="{{asset("storage/" . $restaurant->image)}}" alt="copertina">
+@endif</td>
             <td><a href="{{route("restaurants.show", $restaurant->id)}}">Vai al dettaglio</a></td>
         </tr>
     @endforeach

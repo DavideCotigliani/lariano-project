@@ -3,24 +3,23 @@
 
 @section('content')
 
-{{-- <div class="card" style="width: 18rem;">
-         @if ($attrazione->image)
+<div class="card" style="width: 18rem;">
+         @if ($restaurant->image)
 <div id="videogame-image">
-  <img class="card-img-top" src="{{asset("storage/" . $attrazione->image)}}" alt="copertina">
+  <img class="card-img-top" src="{{asset("storage/" . $restaurant->image)}}" alt="copertina">
 </div> 
-@endif --}}
+@endif
 
   <div class="card-body">
     <h4 class="card-title">{{$restaurant->name}}</h4>
-    <h5 class="card-title">{{$restaurant->address}}</h5>
-    <p class="card-text">{{$restaurant->phone}}</p>
-     <p class="card-text">{{$restaurant->latitude}}</p>
-     <p class="card-text">{{$restaurant->longitude}}</p>
-      <p class="card-text">{{$restaurant->image}}</p>
+    <p class="card-title"><strong>Indirizzo</strong>: {{$restaurant->address}} </p>
+    <p class="card-text"> <strong>Numero di telefono</strong>: {{$restaurant->phone}}</p>
+     <p class="card-text"> <strong>Latitudine</strong>: {{$restaurant->latitude}}</p>
+     <p class="card-text"> <strong>Longitudine</strong>: {{$restaurant->longitude}}</p>
   </div>
 </div>
 <div class="d-flex gap-1" >
-    {{-- <a class="btn btn-warning" href="{{route ("attrazioni.edit", $attrazione)}}">Modifica</a> --}}
+    <a class="btn btn-warning" href="{{route ("restaurants.edit", $restaurant)}}">Modifica</a>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Elimina
 </button>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -43,17 +44,38 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Event $event)
     {
-        //
+        return view("events.edit", compact("event"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Event $event)
     {
-        //
+
+        $data = $request->all();
+        $event->title = $data['title'];
+        $event->description = $data['description'];
+        $event->start_date = $data['start_date'];
+        $event->end_date = $data['end_date'];
+
+
+        // // Carico l'immagine solo se presente
+        // if ($request->hasFile('image')) {
+        //     // se c'è già un'immagine, eliminiamola
+        //     if ($event->image) {
+        //         Storage::delete($event->image);
+        //     }
+
+        //     // salva la nuova immagine sul disco "public"
+        //     $img_url = $request->file('image')->store('books', 'public');
+        //     $event->image = $img_url;
+        // }
+        $event->update();
+        return redirect()->route("events.show", $event);
+
     }
 
     /**

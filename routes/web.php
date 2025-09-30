@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\AttrazioneController;
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\Admin\AttrazioneController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RestaurantController;
-use App\Models\Event;
+use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,10 +23,13 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('attrazioni', AttrazioneController::class)->parameters([
     'attrazioni' => 'attrazione'
-]);
+])->middleware(['auth','verified']);
+;
 
-Route::resource('events', EventController::class);
+Route::resource('events', EventController::class)->middleware(['auth','verified']);
+;
 
-Route::resource('restaurants', RestaurantController::class);
+Route::resource('restaurants', RestaurantController::class)->middleware(['auth','verified']);
+;
 
 require __DIR__.'/auth.php';

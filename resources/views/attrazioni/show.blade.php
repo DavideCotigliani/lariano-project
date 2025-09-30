@@ -19,11 +19,11 @@
   </div>
 </div>
 <div class="d-flex gap-1" >
-    {{-- <a class="btn btn-warning" href="{{route ("attrazioni.edit", $attrazione)}}">Modifica</a> --}}
+    <a class="btn btn-warning" href="{{route ("attrazioni.edit", $attrazione)}}">Modifica</a>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Elimina
 </button>
-    <a class="btn btn-primary" href="{{route ("events.index")}}">Torna alla lista</a>
+    <a class="btn btn-primary" href="{{route ("attrazioni.index")}}">Torna alla lista</a>
 </div>
 {{-- Per eliminare il videogioco --}}
 {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

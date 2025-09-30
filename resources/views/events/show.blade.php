@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="d-flex gap-1" >
-    {{-- <a class="btn btn-warning" href="{{route ("attrazioni.edit", $attrazione)}}">Modifica</a> --}}
+    <a class="btn btn-warning" href="{{route ("events.edit", $event)}}">Modifica</a>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Elimina
 </button>
