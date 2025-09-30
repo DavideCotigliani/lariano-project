@@ -5,7 +5,7 @@
 
 <div class="card" style="width: 18rem;">
          @if ($restaurant->image)
-<div id="videogame-image">
+<div id="restaurant-image">
   <img class="card-img-top" src="{{asset("storage/" . $restaurant->image)}}" alt="copertina">
 </div> 
 @endif

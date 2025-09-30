@@ -3,19 +3,18 @@
 
 @section('content')
 
-{{-- <div class="card" style="width: 18rem;">
-         @if ($attrazione->image)
+<div class="card" style="width: 18rem;">
+         @if ($event->image)
 <div id="videogame-image">
-  <img class="card-img-top" src="{{asset("storage/" . $attrazione->image)}}" alt="copertina">
+  <img class="card-img-top" src="{{asset("storage/" . $event->image)}}" alt="copertina">
 </div> 
-@endif --}}
+@endif
 
   <div class="card-body">
     <h4 class="card-title">{{$event->title}}</h4>
     <h5 class="card-title">{{$event->description}}</h5>
     <p class="card-text">{{$event->start_date}}</p>
      <p class="card-text">{{$event->end_date}}</p>
-      <p class="card-text">{{$event->immagini}}</p>
   </div>
 </div>
 <div class="d-flex gap-1" >

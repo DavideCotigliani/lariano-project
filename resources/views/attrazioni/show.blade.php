@@ -3,19 +3,19 @@
 
 @section('content')
 
-{{-- <div class="card" style="width: 18rem;">
+<div class="card" style="width:25rem;">
          @if ($attrazione->image)
-<div id="videogame-image">
+<div id="restaurant-image">
   <img class="card-img-top" src="{{asset("storage/" . $attrazione->image)}}" alt="copertina">
 </div> 
-@endif --}}
+@endif
 
   <div class="card-body">
     <h4 class="card-title">{{$attrazione->nome}}</h4>
     <h5 class="card-title">{{$attrazione->descrizione}}</h5>
-    <p class="card-text">{{$attrazione->categoria}}</p>
-     <p class="card-text">{{$attrazione->latitudine}}</p>
-      <p class="card-text">{{$attrazione->longitudine}}</p>
+    <p class="card-text">Categoria: {{$attrazione->categoria}}</p>
+     <p class="card-text">Latitudine: {{$attrazione->latitudine}}</p>
+      <p class="card-text"> Longitudine: {{$attrazione->longitudine}}</p>
   </div>
 </div>
 <div class="d-flex gap-1" >

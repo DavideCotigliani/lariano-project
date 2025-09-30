@@ -18,7 +18,9 @@
             <td>{{$event->description}}</td>
             <td>{{$event->start_date}}</td>
              <td>{{$event->end_date}}</td>
-              <td>{{$event->immagini}}</td>
+<td>@if ($event->image)
+  <img class="card-img-top" src="{{asset("storage/" . $event->image)}}" alt="copertina">
+@endif</td>
             <td><a href="{{route("events.show", $event->id)}}">Vai al dettaglio</a></td>
         </tr>
     @endforeach

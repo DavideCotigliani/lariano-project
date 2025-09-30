@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -62,17 +63,17 @@ class EventController extends Controller
         $event->end_date = $data['end_date'];
 
 
-        // // Carico l'immagine solo se presente
-        // if ($request->hasFile('image')) {
-        //     // se c'è già un'immagine, eliminiamola
-        //     if ($event->image) {
-        //         Storage::delete($event->image);
-        //     }
+        // Carico l'immagine solo se presente
+        if ($request->hasFile('image')) {
+            // se c'è già un'immagine, eliminiamola
+            if ($event->image) {
+                Storage::delete($event->image);
+            }
 
-        //     // salva la nuova immagine sul disco "public"
-        //     $img_url = $request->file('image')->store('books', 'public');
-        //     $event->image = $img_url;
-        // }
+            // salva la nuova immagine sul disco "public"
+            $img_url = $request->file('image')->store('events', 'public');
+            $event->image = $img_url;
+        }
         $event->update();
         return redirect()->route("events.show", $event);
 

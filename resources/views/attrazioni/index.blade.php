@@ -9,6 +9,7 @@
       <th scope="col">Categoria</th>
       <th scope="col">Latitudine</th>
       <th scope="col">Longitudine</th>
+      <th scope="col">Immagini</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,9 @@
             <td>{{$attrazione->categoria}}</td>
              <td>{{$attrazione->latitudine}}</td>
               <td>{{$attrazione->longitudine}}</td>
+              <td> @if ($attrazione->image)
+  <img class="card-img-top" src="{{asset("storage/" . $attrazione->image)}}" alt="copertina">
+@endif</td>
             <td><a href="{{route("attrazioni.show", $attrazione->id)}}">Vai al dettaglio</a></td>
         </tr>
     @endforeach
