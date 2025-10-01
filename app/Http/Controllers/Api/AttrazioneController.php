@@ -12,10 +12,10 @@ class AttrazioneController extends Controller
     {
         $attrazioni = Attrazione::all();
 
-        // aggiungi image_url per ogni libro
-        // $videogames->each(function ($videogame) {
-        //     $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
-        // });
+        // aggiungi image_url per ogni attrazione
+        $attrazioni->each(function ($attrazione) {
+            $attrazione->image_url = $attrazione->image ? asset('storage/' . $attrazione->image) : null;
+        });
 
         return response()->json(
             ["success" => true,
@@ -27,7 +27,7 @@ class AttrazioneController extends Controller
     {
 
         // // aggiungi un campo image_url per React
-        // $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
+        $attrazione->image_url = $attrazione->image ? asset('storage/' . $attrazione->image) : null;
 
         return response()->json([
             "success" => true,
