@@ -13,9 +13,9 @@ class RestaurantController extends Controller
         $restaurants = Restaurant::all();
 
         // aggiungi image_url per ogni libro
-        // $videogames->each(function ($videogame) {
-        //     $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
-        // });
+        $restaurants->each(function ($restaurant) {
+            $restaurant->image_url = $restaurant->image ? asset('storage/' . $restaurant->image) : null;
+        });
 
         return response()->json(
             ["success" => true,
@@ -27,7 +27,7 @@ class RestaurantController extends Controller
     {
 
         // // aggiungi un campo image_url per React
-        // $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
+        $restaurant->image_url = $restaurant->image ? asset('storage/' . $restaurant->image) : null;
 
         return response()->json([
             "success" => true,

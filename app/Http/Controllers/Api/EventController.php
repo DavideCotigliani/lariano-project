@@ -13,9 +13,9 @@ class EventController extends Controller
         $events = Event::all();
 
         // aggiungi image_url per ogni libro
-        // $videogames->each(function ($videogame) {
-        //     $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
-        // });
+        $events->each(function ($event) {
+            $event->image_url = $event->image ? asset('storage/' . $event->image) : null;
+        });
 
         return response()->json(
             ["success" => true,
@@ -27,7 +27,7 @@ class EventController extends Controller
     {
 
         // // aggiungi un campo image_url per React
-        // $videogame->image_url = $videogame->image ? asset('storage/' . $videogame->image) : null;
+        $event->image_url = $event->image ? asset('storage/' . $event->image) : null;
 
         return response()->json([
             "success" => true,
